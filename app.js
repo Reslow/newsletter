@@ -42,7 +42,9 @@ app.post("/", function (req, res) {
   const request = https.request(url, options, (response) => {
     if (response.statusCode === 200) {
       res.sendFile(__dirname + "/success.html");
+      console.log(response.statusCode);
     } else {
+      console.log(response.statusCode);
       res.sendFile(__dirname + "/failure.html");
     }
     response.on("data", function (data) {
@@ -65,8 +67,3 @@ app.post("/success", function (req, res) {
 app.listen(process.env.PORT || 3000, function () {
   console.log("running on port 3000");
 });
-
-// my key - 188af07007602c8261d98a7999a961de-us20
-
-// id:
-// 93438bf0b6
